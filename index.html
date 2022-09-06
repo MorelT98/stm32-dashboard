@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Visualisation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        
+        <nav class="navbar bg-top">
+            <a href="#">
+                <img src="/assets/st logo.svg" width="80">
+            </a>
+            <h2 id="title">STM32U5 AWS Dashboard</h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subscribe" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+
+          </nav>
+        
+        
+        <div class="section">
+            <div class="subsection chart">
+                <canvas id="envData"></canvas>
+            </div>
+            <div class="subsection chart">
+                <canvas id="motionData"></canvas>
+            </div>
+        </div>
+
+        <div class="section">
+            <table class="table subsection">
+                <thead class="properties">
+                  <tr>
+                    <th scope="col">Property</th>
+                    <th scope="col">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="propertyName" scope="row">Device Name</th>
+                        <td>
+                            <p>STM32U5</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="propertyName" scope="row">Device ID</th>
+                        <td>
+                            <p id="deviceID"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="propertyName" scope="row">Connection Status</th>
+                        <td>
+                            <div class="status">
+                                <p id="idConnectionStatus">Device Disconnected</p>
+                            </div>
+                        </td>
+                    </tr>
+                  <tr>
+                    <th class="propertyName" scope="row">LED</th>
+                    <td class="led"><div class="button r center" id="button-1">
+                        <input type="checkbox" class="checkbox" id="ledCheckbox" onclick=toggleLED()>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                    <div >
+                        <img id="ledImage" src="/assets/led_off.svg">
+                    </div></td>
+                  </tr>
+                
+                </tbody>
+              </table>
+
+              <div class="subsection qrsection">
+                <p>Scan this QR Code to load the dashboard on your phone</p>
+                <div id="qrcode"></div>
+                <p>Click <a href="https://community.st.com/s/article/getting-started-with-stm32u5-iot-discovery-kit-and-aws" target="_blank">Here</a> to get started with STM32U5 and AWS</p>
+              </div>
+        </div>
+
+        
+
+        
+        <!-- Chart.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- MQTT Stuff -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/hmac-min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js" type="text/javascript"></script>
+        
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <!-- QR Code generator -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- Local js -->
+        <script src="/main.js"></script>
+        <script src="/iot.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+.bg-top {
+    background-color: #03234b;
+}
+
+.navbar {
+    height: 5%;
+    padding: 0;
+}
+
+#title {
+    color: white;
+}
+
+.status {
+    display: block;
+
+    color: red;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.status-connected {
+    color: green;
+}
+
+.status-disconnected {
+    color: red;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+}
+
+.chart {
+    height: 10%;
+}
+
+.subsection {
+    width: 50%;
+    height: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    text-align: center;
+}
+
+.subsection > p {
+    color: #03234b;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.table {
+    margin-top: 6%;
+    margin-left: 6%;
+}
+
+.qrsection {
+    padding-top: 2%;
+    width: 40%;
+}
+
+#qrcode > img {
+    width: 96%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 1%;
+    /* border: 5px solid red; */
+}
+
+
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    .section {
+        display: block;
+    }
+    .subsection {
+      width: 100%;
+    }
+    #title {
+        text-align: center;
+    }
+    .table {
+        width: 100%;
+        margin: 0%;
+    }
+  }
+
+.propertyName {
+    color: #03234b;
+}
+
+.thead-dark {
+    background-color: #03234b;
+}
+
+#button-1 {
+    align-self: center;
+    margin-right: 10px;
+}
+
+.properties {
+    background-color: #03234b; 
+    color: white; 
+    font-size: larger;
+}
+
+#ledImage {
+    width: 50px;
+}
+
+.led {
+    display: inline-flex;
+}
+
+#button-1 .knobs:before{content: '';position: absolute;top: 4px;left: 4px;width: 20px;height: 10px;color: #fff;font-size: 10px;font-weight: bold;text-align: center;line-height: 1;padding: 9px 4px;background-color: #fff;border-radius: 50%;transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.20);}
+#button-1 .checkbox:checked + .knobs:before{content: '';left: 32px;background-color: #fff;}
+#button-1 .checkbox:checked ~ .layer{background-color: #3cb4e6;}
+#button-1 .knobs, #button-1 .knobs:before, #button-1 .layer{transition: 0.3s ease all;}
+.knobs, .layer{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
+.button{position: relative;top: 50%;width: 55px;height: 25px;margin: -20px auto 0 auto;overflow: hidden;margin: 0;}
+.button.r, .button.r .layer{border-radius: 100px;}
+.checkbox{position: relative;width: 100%;height: 100%;padding: 0;margin: 0;opacity: 0;cursor: pointer;z-index: 3;}
+.knobs{z-index: 2;}
+.layer{width: 100%;background-color: #d3d3d3;transition: 0.3s ease all;z-index: 1;}
