@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stm32dashboard-dev-205251-authRole",
+      "UnauthRoleArn": "arn:aws:iam::233886338385:role/amplify-stm32dashboard-dev-205251-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::233886338385:role/amplify-stm32dashboard-dev-205251-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-stm32dashboard-dev-205251-deployment",
+      "UnauthRoleName": "amplify-stm32dashboard-dev-205251-unauthRole",
+      "StackName": "amplify-stm32dashboard-dev-205251",
+      "StackId": "arn:aws:cloudformation:us-east-1:233886338385:stack/amplify-stm32dashboard-dev-205251/62888860-2d97-11ed-a71f-0e332269b1cb",
+      "AmplifyAppId": "d2mnxg3n5h7p50"
+    }
+  }
+}
